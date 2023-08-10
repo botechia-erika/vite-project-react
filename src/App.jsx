@@ -1,23 +1,21 @@
 import React from 'react';
 
-import CardVideo from './componentes/CardVideo/CardVideo';
-import Header from './componentes/Header/Header';
-
-import Styled from 'styled-components';
-import './GlobalStyle';
-import './styles.css';
-import { GlobalStyled } from './GlobalStyle';
-
-export default function App() {
+import { CardVideo } from './components/CardVideo/CardVideo';
+import { Header } from './components/Header/Header';
+import GlobalStyle from './globals/globalStyle';
+import './index.css';
+export function App() {
+  const imagemVideo =
+    'https://e7.pngegg.com/pngimages/532/820/png-clipart-shovel-knight-gif-pixel-art-sprite-knight-game-maker.png';
   const card1 = {
     titulo: 'Título do vídeo',
-    imagemDoVideo: 'https://picsum.photos/400/400?a=1',
+    imagemDoVideo: imagemVideo,
     textoAlternativo: 'descrição da imagem',
   };
 
   return (
     <div>
-      <GlobalStyled />
+      <GlobalStyle />
       <div className="tela-inteira">
         <header>
           <h1>LabeTube</h1>
@@ -38,7 +36,7 @@ export default function App() {
 
           <section className="painel-de-videos">
             <CardVideo
-              image1={card1.imagemDoVideo}
+              image1={imagemDoVideo}
               titulo={card1.titulo}
               textoAlternativo={card1.textoAlternativo}
             />
